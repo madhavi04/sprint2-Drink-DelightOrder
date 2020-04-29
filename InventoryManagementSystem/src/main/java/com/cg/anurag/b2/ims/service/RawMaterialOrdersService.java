@@ -29,7 +29,7 @@ public class RawMaterialOrdersService
 		RawMaterialOrders rawMaterialOrders = rmodao.findById(newRawMaterial.getOrderId()).get();
 		if(rawMaterialOrders!=null)
 		{
-			rawMaterialOrders.setDeliveryStatus(newRawMaterial.getDeliveryStatus());
+			rawMaterialOrders.setDeliverystatus(newRawMaterial.getDeliverystatus());
 			return "Successfully Updated";
 		}
 		return "Updation Failed";

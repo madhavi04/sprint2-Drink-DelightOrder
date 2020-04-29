@@ -1,59 +1,53 @@
 package com.cg.anurag.b2.ims.dto;
-
-import java.time.LocalDate;
+import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+
 @Entity
-@Table(name="rawmaterialorders")
-public class RawMaterialOrders 
-{
+@Table(name="displayrawmaterialorder")
+public class RawMaterialOrders {
 	@Id
 	@Column(name="orderid")
 	String orderId;
 	@Column(name="rawmaterialname")
-	String rawMaterialName;
-	@Column(name="priceperunit")
-	double pricePerUnit;
-	@Column(name="quantityvalue")
-	double quantityValue;
-	@Column(name="totalprice")
-	double totalPrice;
-	@Column(name="warehouseid")
-	String wareHouseId;
+	String rawmaterialname;
 	@Column(name="supplierid")
-	String SupplierId;
+	String supplierId;
+	@Column(name="quantityvalue")
+	double quantityvalue;
+	@Column(name="quantityunit")
+	double quantityunit;
 	@Column(name="dateoforder")
-	LocalDate dateoforder;
-	@Column(name="deliverydate")
-	LocalDate deliveryDate;
+	Date dateoforder;
+	@Column(name="dateofdelivery")
+	Date dateofdelivery;
+	@Column(name="priceperunit")
+	double priceperunit;
+	@Column(name="totalprice")
+	double totalprice;
 	@Column(name="deliverystatus")
-	String deliveryStatus;
+	String deliverystatus;
+	@Column(name="warehouseid")
+	String warehouseId;
 	public RawMaterialOrders() {}
-	public RawMaterialOrders(String orderId, String rawMaterialName, double pricePerUnit, double quantityValue,
-			double totalPrice, String wareHouseId, String supplierId, LocalDate deliveryDate,
-		LocalDate dateoforder	, String deliveryStatus) {
+	public RawMaterialOrders(String orderId, String rawmaterialname, String supplierId, double quantityvalue,
+			double quantityunit, Date dateoforder, Date dateofdelivery, double priceperunit, double totalprice,
+			String deliverystatus, String warehouseId) {
 		this.orderId = orderId;
-		this.rawMaterialName = rawMaterialName;
-		this.pricePerUnit = pricePerUnit;
-		this.quantityValue = quantityValue;
-		this.totalPrice = totalPrice;
-		this.wareHouseId = wareHouseId;
-		this.SupplierId = supplierId;
-		this.dateoforder=dateoforder;
-		this.deliveryDate = deliveryDate;
-		
-		
-		this.deliveryStatus = deliveryStatus;
-	}
-	public LocalDate getDateoforder() {
-		return dateoforder;
-	}
-	public void setDateoforder(LocalDate dateoforder) {
+		this.rawmaterialname = rawmaterialname;
+		this.supplierId = supplierId;
+		this.quantityvalue = quantityvalue;
+		this.quantityunit = quantityunit;
 		this.dateoforder = dateoforder;
+		this.dateofdelivery = dateofdelivery;
+		this.priceperunit = priceperunit;
+		this.totalprice = totalprice;
+		this.deliverystatus = deliverystatus;
+		this.warehouseId = warehouseId;
 	}
 	public String getOrderId() {
 		return orderId;
@@ -61,53 +55,64 @@ public class RawMaterialOrders
 	public void setOrderId(String orderId) {
 		this.orderId = orderId;
 	}
-	public String getRawMaterialName() {
-		return rawMaterialName;
+	public String getRawmaterialname() {
+		return rawmaterialname;
 	}
-	public void setRawMaterialName(String rawMaterialName) {
-		this.rawMaterialName = rawMaterialName;
-	}
-	public double getPricePerUnit() {
-		return pricePerUnit;
-	}
-	public void setPricePerUnit(double pricePerUnit) {
-		this.pricePerUnit = pricePerUnit;
-	}
-	public double getQuantityValue() {
-		return quantityValue;
-	}
-	public void setQuantityValue(double quantityValue) {
-		this.quantityValue = quantityValue;
-	}
-	public double getTotalPrice() {
-		return totalPrice;
-	}
-	public void setTotalPrice(double totalPrice) {
-		this.totalPrice = totalPrice;
-	}
-	public String getWareHouseId() {
-		return wareHouseId;
-	}
-	public void setWareHouseId(String wareHouseId) {
-		this.wareHouseId = wareHouseId;
+	public void setRawmaterialname(String rawmaterialname) {
+		this.rawmaterialname = rawmaterialname;
 	}
 	public String getSupplierId() {
-		return SupplierId;
+		return supplierId;
 	}
 	public void setSupplierId(String supplierId) {
-		SupplierId = supplierId;
+		this.supplierId = supplierId;
 	}
-	public LocalDate getDeliveryDate() {
-		return deliveryDate;
+	public double getQuantityvalue() {
+		return quantityvalue;
 	}
-	public void setDeliveryDate(LocalDate deliveryDate) {
-		this.deliveryDate = deliveryDate;
+	public void setQuantityvalue(double quantityvalue) {
+		this.quantityvalue = quantityvalue;
 	}
-	
-	public String getDeliveryStatus() {
-		return deliveryStatus;
+	public double getQuantityunit() {
+		return quantityunit;
 	}
-	public void setDeliveryStatus(String deliveryStatus) {
-		this.deliveryStatus = deliveryStatus;
-	}	
+	public void setQuantityunit(double quantityunit) {
+		this.quantityunit = quantityunit;
+	}
+	public Date getDateoforder() {
+		return dateoforder;
+	}
+	public void setDateoforder(Date dateoforder) {
+		this.dateoforder = dateoforder;
+	}
+	public Date getDateofdelivery() {
+		return dateofdelivery;
+	}
+	public void setDateofdelivery(Date dateofdelivery) {
+		this.dateofdelivery = dateofdelivery;
+	}
+	public double getPriceperunit() {
+		return priceperunit;
+	}
+	public void setPriceperunit(double priceperunit) {
+		this.priceperunit = priceperunit;
+	}
+	public double getTotalprice() {
+		return totalprice;
+	}
+	public void setTotalprice(double totalprice) {
+		this.totalprice = totalprice;
+	}
+	public String getDeliverystatus() {
+		return deliverystatus;
+	}
+	public void setDeliverystatus(String deliverystatus) {
+		this.deliverystatus = deliverystatus;
+	}
+	public String getWarehouseId() {
+		return warehouseId;
+	}
+	public void setWarehouseId(String warehouseId) {
+		this.warehouseId = warehouseId;
+	}
 }

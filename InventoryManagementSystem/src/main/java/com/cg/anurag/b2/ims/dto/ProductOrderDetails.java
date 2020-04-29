@@ -1,5 +1,5 @@
 package com.cg.anurag.b2.ims.dto;
-import java.time.LocalDate;
+import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -7,107 +7,115 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="productorders")
-public class ProductOrderDetails
-{
-	@Id
-	@Column(name="orderid")
-	String orderId;
-	@Column(name="productname")
-	String productName;
-	@Column(name="priceperunit")
-	double pricePerUnit;
-	@Column(name="quantityvalue")
-	double quantityValue;
-	@Column(name="totalprice")
-	double totalPrice;
-	@Column(name="warehouseid")
-	String wareHouseId;
-	@Column(name="distributorid")
-	String distributorId;
-	@Column(name="dateoforder")
-	LocalDate dateoforder;
-	@Column(name="deliverydate")
-	LocalDate deliveryDate;
-	@Column(name="deliverystatus")
-	String deliveryStatus;
-	public ProductOrderDetails() {}
-	public ProductOrderDetails(String orderId, String productName, double pricePerUnit, double quantityValue,
-			double totalPrice, String wareHouseId, String distributorId,LocalDate dateoforder, LocalDate deliveryDate,
-			 String deliveryStatus) {
-		this.orderId = orderId;
-		this.productName = productName;
-		this.pricePerUnit = pricePerUnit;
-		this.quantityValue = quantityValue;
-		this.totalPrice = totalPrice;
-		this.wareHouseId = wareHouseId;
-		this.distributorId=distributorId;
-		this.dateoforder=dateoforder;
-		this.deliveryDate = deliveryDate;
-		
-		this.deliveryStatus = deliveryStatus;
+@Table(name="displayproductorder")
 
-	}
-	public String getOrderId() {
-		return orderId;
-	}
-	public void setOrderId(String orderId) {
-		this.orderId = orderId;
-	}
-	public String getProductName() {
-		return productName;
-	}
-	public void setProductName(String productName) {
-		this.productName = productName;
-	}
-	public double getPricePerUnit() {
-		return pricePerUnit;
-	}
-	public void setPricePerUnit(double pricePerUnit) {
-		this.pricePerUnit = pricePerUnit;
-	}
-	public double getQuantityValue() {
-		return quantityValue;
-	}
-	public void setQuantityValue(double quantityValue) {
-		this.quantityValue = quantityValue;
-	}
-	public double getTotalPrice() {
-		return totalPrice;
-	}
-	public void setTotalPrice(double totalPrice) {
-		this.totalPrice = totalPrice;
-	}
-	public String getWareHouseId() {
-		return wareHouseId;
-	}
-	public void setWareHouseId(String wareHouseId) {
-		this.wareHouseId = wareHouseId;
-	}
-	public String getDistributorId() {
-		return distributorId;
-	}
-	public void setDistributorId(String distributorId) {
-		this.distributorId = distributorId;
-	}
+
+public class ProductOrderDetails {
 	
-	public LocalDate getDateoforder() {
-		return dateoforder;
-	}
-	public void setDateoforder(LocalDate dateoforder) {
-		this.dateoforder = dateoforder;
-	}
-	public LocalDate getDeliveryDate() {
-		return deliveryDate;
-	}
-	public void setDeliveryDate(LocalDate deliveryDate) {
-		this.deliveryDate = deliveryDate;
-	}
-	public String getDeliveryStatus() {
-		return deliveryStatus;
-	}
-	public void setDeliveryStatus(String deliveryStatus) {
-		this.deliveryStatus = deliveryStatus;
-	}
-	}
-
+		@Id
+		@Column(name="orderid")
+		String orderId;
+		@Column(name="productname")
+		String productname;
+		@Column(name="distributorid")
+		String distributorId;
+		@Column(name="quantityvalue")
+		double quantityvalue;
+		@Column(name="quantityunit")
+		double quantityunit;
+		@Column(name="dateoforder")
+		Date dateoforder;
+		@Column(name="dateofdelivery")
+		Date dateofdelivery;
+		@Column(name="priceperunit")
+		double priceperunit;
+		@Column(name="totalprice")
+		double totalprice;
+		@Column(name="deliverystatus")
+		String deliverystatus;
+		@Column(name="warehouseid")
+		String warehouseId;
+		public ProductOrderDetails() {}
+		public ProductOrderDetails(String orderId, String productname, String distributorId, double quantityvalue,
+				double quantityunit, Date dateoforder, Date dateofdelivery, double priceperunit, double totalprice,
+				String deliverystatus, String warehouseId) {
+			this.orderId = orderId;
+			this.productname = productname;
+			this.distributorId = distributorId;
+			this.quantityvalue = quantityvalue;
+			this.quantityunit = quantityunit;
+			this.dateoforder = dateoforder;
+			this.dateofdelivery = dateofdelivery;
+			this.priceperunit = priceperunit;
+			this.totalprice = totalprice;
+			this.deliverystatus = deliverystatus;
+			this.warehouseId = warehouseId;
+		}
+		public String getOrderId() {
+			return orderId;
+		}
+		public void setOrderId(String orderId) {
+			this.orderId = orderId;
+		}
+		public String getProductname() {
+			return productname;
+		}
+		public void setProductname(String productname) {
+			this.productname = productname;
+		}
+		public String getDistributorId() {
+			return distributorId;
+		}
+		public void setDistributorId(String distributorId) {
+			this.distributorId = distributorId;
+		}
+		public double getQuantityvalue() {
+			return quantityvalue;
+		}
+		public void setQuantityvalue(double quantityvalue) {
+			this.quantityvalue = quantityvalue;
+		}
+		public double getQuantityunit() {
+			return quantityunit;
+		}
+		public void setQuantityunit(double quantityunit) {
+			this.quantityunit = quantityunit;
+		}
+		public Date getDateoforder() {
+			return dateoforder;
+		}
+		public void setDateoforder(Date dateoforder) {
+			this.dateoforder = dateoforder;
+		}
+		public Date getDateofdelivery() {
+			return dateofdelivery;
+		}
+		public void setDateofdelivery(Date dateofdelivery) {
+			this.dateofdelivery = dateofdelivery;
+		}
+		public double getPriceperunit() {
+			return priceperunit;
+		}
+		public void setPriceperunit(double priceperunit) {
+			this.priceperunit = priceperunit;
+		}
+		public double getTotalprice() {
+			return totalprice;
+		}
+		public void setTotalprice(double totalprice) {
+			this.totalprice = totalprice;
+		}
+		public String getDeliverystatus() {
+			return deliverystatus;
+		}
+		public void setDeliverystatus(String deliverystatus) {
+			this.deliverystatus = deliverystatus;
+		}
+		public String getWarehouseId() {
+			return warehouseId;
+		}
+		public void setWarehouseId(String warehouseId) {
+			this.warehouseId = warehouseId;
+		}
+		
+		}
