@@ -8,7 +8,15 @@ import org.springframework.stereotype.Repository;
 import com.cg.anurag.b2.ims.dto.ProductOrderDetails;
 
 @Repository
-public interface ProductOrderDetailsDAO extends JpaRepository<ProductOrderDetails,String>
+public interface ProductOrderDetailsDAO 
 {
-	public List<ProductOrderDetails> findAllOrdersByDistributorId(String distributorId);
+ProductOrderDetails addProductOrder(ProductOrderDetails p);
+    
+   
+    
+    ProductOrderDetails getProductOrderDetailsById(int order_id);
+    
+    
+  
+    ProductOrderDetails updateproductorder(ProductOrderDetails p);
 }
