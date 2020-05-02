@@ -11,13 +11,7 @@ import com.cg.anurag.b2.ims.dto.RawMaterialOrderDetails;
 public interface RawMaterialOrderDetailsDao {
 
 	RawMaterialOrderDetails addRawMaterialOrder(RawMaterialOrderDetails r);
-
-
-
 	RawMaterialOrderDetails getRawMaterialOrderDetailById(int order_id);
-	
-	
-
 	RawMaterialOrderDetails updateRawMaterialOrder(RawMaterialOrderDetails r);
 
 
